@@ -1,0 +1,40 @@
+.container {
+  background-color: #3e3940;
+  border-radius: 1rem;
+  height: 700px;
+  width: 50%;
+  margin: auto;
+  padding: 1rem;
+  gap: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "ekran ekran ekran ekran"
+    "on-off reset mod kare"
+    "bir iki uc carpma"
+    "dort bes alti bolme"
+    "yedi sekiz dokuz cikarma"
+    "sifir nokta esit toplama";
+}
+#ekran {
+  background-color: #7e778c;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: ekran;
+}
+button {
+  color: #f2c9c9;
+  background-color: #544c59;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5rem;
+}
+button:hover {
+    color: white;
+  background-color: #261b14;
+  transform: translateY(2px) translateX(-2px);
+  box-shadow: 3px 3px 10px black;
+}
