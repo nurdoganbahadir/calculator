@@ -8,8 +8,8 @@
   gap: 10px;
   text-align: center;
   display: grid;
-  grid-template-columns: 3fr 3fr 3fr  2fr ;
-  grid-template-rows: 2fr 0.5fr 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 3fr 3fr 3fr 2fr;
+  grid-template-rows: 2fr 0.5fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
     "ekran ekran ekran ekran"
     "on-off reset mod kare"
@@ -34,6 +34,7 @@ button {
   border: none;
   border-radius: 10px;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 button:hover {
   color: white;
@@ -82,6 +83,7 @@ button:hover {
   grid-area: dokuz;
 }
 #nokta {
+  font-size: 3rem;
   grid-area: nokta;
 }
 #esit {
