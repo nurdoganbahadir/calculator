@@ -11,20 +11,76 @@ const yedi = document.getElementById("yedi");
 const sekiz = document.getElementById("sekiz");
 const dokuz = document.getElementById("dokuz");
 const sifir = document.getElementById("sifir");
+const cikarma = document.getElementById("cikarma");
 const toplama = document.getElementById("toplama");
+const carpma = document.getElementById("carpma");
+const bolme = document.getElementById("bolme");
+const esit = document.getElementById("esit");
 
-switch (toplama) {
-  case toplama.onclick:
-    ekran.textContent = bir + iki;
-    break;
+let count = [];
+esit.onclick = function () {
+  let toplamalar = count.join("").split("+");
+  let toplananDegerler = 0;
+  for (let i = 0; i < toplamalar.length; i++) {
+    toplananDegerler += parseFloat(toplamalar[i]);
+  }
+  console.log(toplananDegerler);
+  ekran.textContent = toplananDegerler;
+};
 
-  default:
-    break;
-}
-
-power.onclick = function () {
-  ekran.textContent = " ";
+bir.onclick = function () {
+  count.push(1);
+  ekran.textContent = count;
+};
+iki.onclick = function () {
+  count.push(2);
+  ekran.textContent = count.join("");
+};
+uc.onclick = function () {
+  count.push(3);
+  ekran.textContent = count.join("");
+};
+dort.onclick = function () {
+  count.push(4);
+  ekran.textContent = count.join("");
+};
+bes.onclick = function () {
+  count.push(5);
+  ekran.textContent = count.join("");
+};
+alti.onclick = function () {
+  count.push(6);
+  ekran.textContent = count.join("");
+};
+yedi.onclick = function () {
+  count.push(7);
+  ekran.textContent = count.join("");
+};
+sekiz.onclick = function () {
+  count.push(8);
+  ekran.textContent = count.join("");
+};
+dokuz.onclick = function () {
+  count.push(9);
+  ekran.textContent = count.join("");
+};
+sifir.onclick = function () {
+  count.push(0);
+  ekran.textContent = count.join("");
+};
+toplama.onclick = function () {
+  count.push("+");
+  ekran.textContent = count.join("");
 };
 reset.onclick = function () {
-  ekran.textContent = "0";
+  count = [];
+  ekran.textContent = count;
+};
+power.onclick = function () {
+  if(count.length >= 1){
+    ekran.textContent = "off"
+    count = []
+  } else{
+    ekran.textContent = "on"
+  }
 };
