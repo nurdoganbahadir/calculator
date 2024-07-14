@@ -20,12 +20,19 @@ const nokta = document.getElementById("nokta");
 
 let count = [];
 esit.onclick = function () {
-  let toplananDegerler = 0;
-  let toplamalar = count.join("").split("+");
-  for (let i = 0; i < toplamalar.length; i++) {
-    toplananDegerler += Number(toplamalar[i]);
+  let sonuc = 0;
+  if (count.includes("+")) {
+    let toplamalar = count.join("").split("+");
+    for (let i = 0; i < toplamalar.length; i++) {
+      sonuc += Number(toplamalar[i]);
+    }
+  } else if (count.includes("-")) {
+    let cikarmalar = count.join("").split("-");
+    for (let i = 0; i < cikarmalar.length; i++) {
+      sonuc -= cikarmalar[i];
+    }
   }
-  ekran.textContent = toplananDegerler;
+  ekran.textContent = sonuc;
 };
 
 bir.onclick = function () {
@@ -81,7 +88,7 @@ nokta.onclick = function () {
   ekran.textContent = count.join("");
 };
 reset.onclick = function () {
-    count.pop()
+  count.pop();
   ekran.textContent = count.join("");
 };
 power.onclick = function () {
