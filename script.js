@@ -19,8 +19,8 @@ const esit = document.getElementById("esit");
 
 let count = [];
 esit.onclick = function () {
-  let toplamalar = count.join("").split("+");
   let toplananDegerler = 0;
+  let toplamalar = count.join("").split("+");
   for (let i = 0; i < toplamalar.length; i++) {
     toplananDegerler += parseFloat(toplamalar[i]);
   }
@@ -72,15 +72,15 @@ toplama.onclick = function () {
   count.push("+");
   ekran.textContent = count.join("");
 };
+cikarma.onclick = function () {
+  count.push("-");
+  ekran.textContent = count.join("");
+};
 reset.onclick = function () {
-  count = [];
+    count.pop()
   ekran.textContent = count;
 };
 power.onclick = function () {
-  if(count.length >= 1){
-    ekran.textContent = "off"
-    count = []
-  } else{
-    ekran.textContent = "on"
-  }
+  count = [];
+  ekran.textContent = count;
 };
