@@ -16,15 +16,15 @@ const toplama = document.getElementById("toplama");
 const carpma = document.getElementById("carpma");
 const bolme = document.getElementById("bolme");
 const esit = document.getElementById("esit");
+const nokta = document.getElementById("nokta");
 
 let count = [];
 esit.onclick = function () {
   let toplananDegerler = 0;
   let toplamalar = count.join("").split("+");
   for (let i = 0; i < toplamalar.length; i++) {
-    toplananDegerler += parseFloat(toplamalar[i]);
+    toplananDegerler += Number(toplamalar[i]);
   }
-  console.log(toplananDegerler);
   ekran.textContent = toplananDegerler;
 };
 
@@ -76,9 +76,13 @@ cikarma.onclick = function () {
   count.push("-");
   ekran.textContent = count.join("");
 };
+nokta.onclick = function () {
+  count.push(".");
+  ekran.textContent = count.join("");
+};
 reset.onclick = function () {
     count.pop()
-  ekran.textContent = count;
+  ekran.textContent = count.join("");
 };
 power.onclick = function () {
   count = [];
